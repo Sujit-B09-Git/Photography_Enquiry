@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101116" />
+    <meta
+      name="description"
+      content="Plan your photography or film project with Sujit Photo Films."
+    />
+    <title>Enquire — Sujit Photo Films</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;1,500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23101116'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23ff7849' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23fff7ea'/%3E%3Cpath d='M15 19h10l3-5h8l3 5h10' fill='none' stroke='%23fff7ea' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <section class="visual-panel" aria-label="Sujit Photo Films introduction">
+        <img
+          class="hero-image"
+          src="./assets/cinematic-wedding-camera.png"
+          alt="A film camera at an evening wedding celebration"
+        />
+        <div class="image-scrim"></div>
+        <div class="brand-lockup">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" role="img"><circle cx="18" cy="18" r="10"></circle><circle cx="18" cy="18" r="3"></circle><path d="M8 11h6l2-3h4l2 3h6"></path></svg>
+          </span>
+          <span><strong>SUJIT</strong><small>PHOTO FILMS</small></span>
+        </div>
+        <div class="visual-copy">
+          <p class="eyebrow">Stories, honestly framed.</p>
+          <h1>Your moments.<br /><em>Made cinematic.</em></h1>
+          <p class="visual-note">Tell us what you are planning. We usually reply within one working day.</p>
+          <div class="service-line" aria-label="Services offered">
+            <span>Weddings</span><span>Portraits</span><span>Events</span><span>Films</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <div class="mobile-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="10"></circle><circle cx="18" cy="18" r="3"></circle><path d="M8 11h6l2-3h4l2 3h6"></path></svg>
+          </span>
+          <span><strong>SUJIT</strong><small>PHOTO FILMS</small></span>
+          <span class="reply-badge">Replies in 1 day</span>
+        </div>
+
+        <div class="form-wrap">
+          <header class="form-header">
+            <div>
+              <p class="step-kicker" id="stepKicker">Step 1 of 3</p>
+              <h2 id="stepTitle">Let’s start with you</h2>
+              <p id="stepDescription">How can we reach you about your shoot?</p>
+            </div>
+            <button class="save-draft" type="button" id="saveDraftBtn" title="Save this enquiry on this device">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5z"></path><path d="M8 4v6h8V4M8 20v-6h8v6"></path></svg>
+              Save draft
+            </button>
+          </header>
+
+          <nav class="progress-nav" aria-label="Enquiry progress">
+            <button class="progress-step is-active" type="button" data-go-step="1" aria-current="step">
+              <span>1</span><b>Your details</b>
+            </button>
+            <i aria-hidden="true"></i>
+            <button class="progress-step" type="button" data-go-step="2" disabled>
+              <span>2</span><b>The project</b>
+            </button>
+            <i aria-hidden="true"></i>
+            <button class="progress-step" type="button" data-go-step="3" disabled>
+              <span>3</span><b>Your vision</b>
+            </button>
+          </nav>
+
+          <form id="enquiryForm" novalidate>
+            <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <section class="form-step is-active" data-step="1" aria-labelledby="stepTitle">
+              <div class="field-grid two-col">
+                <label class="field full-mobile">
+                  <span>Your name <b>*</b></span>
+                  <input name="name" autocomplete="name" placeholder="What should we call you?" required />
+                  <small class="field-error"></small>
+                </label>
+                <label class="field full-mobile">
+                  <span>Phone number <b>*</b></span>
+                  <div class="phone-field"><span>+91</span><input name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="98765 43210" required /></div>
+                  <small class="field-error"></small>
+                </label>
+                <label class="field">
+                  <span>Email address</span>
+                  <input name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+                  <small class="field-error"></small>
+                </label>
+                <label class="field">
+                  <span>Instagram handle</span>
+                  <div class="prefix-field"><span>@</span><input name="instagram" autocapitalize="none" placeholder="yourhandle" /></div>
+                </label>
+                <label class="field full-span">
+                  <span>Your city <b>*</b></span>
+                  <input name="city" autocomplete="address-level2" placeholder="e.g. Pune, Bengaluru, Mumbai" required />
+                  <small class="field-error"></small>
+                </label>
+              </div>
+
+              <fieldset class="choice-fieldset">
+                <legend>How should we contact you? <b>*</b></legend>
+                <div class="segmented-options contact-options">
+                  <label><input type="radio" name="contactPreference" value="WhatsApp" checked /><span><svg viewBox="0 0 24 24"><path d="M20 11.6A8 8 0 0 1 8.2 18.7L4 20l1.3-4.1A8 8 0 1 1 20 11.6Z"></path><path d="M9 8.5c.5 2.7 2 4.2 4.7 5"></path></svg>WhatsApp</span></label>
+                  <label><input type="radio" name="contactPreference" value="Phone call" /><span><svg viewBox="0 0 24 24"><path d="M7 4 4.5 6.5c.5 6.6 6.4 12.5 13 13L20 17l-4-3-2 2c-2.2-.8-5.2-3.8-6-6l2-2Z"></path></svg>Phone call</span></label>
+                  <label><input type="radio" name="contactPreference" value="Email" /><span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg>Email</span></label>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="form-step" data-step="2" aria-labelledby="stepTitle" hidden>
+              <fieldset class="choice-fieldset service-picker">
+                <legend>What are we creating? <b>*</b></legend>
+                <div class="service-grid">
+                  <label><input type="radio" name="eventType" value="Wedding" required /><span><i>01</i><b>Wedding</b><small>Full-day story</small></span></label>
+                  <label><input type="radio" name="eventType" value="Pre-wedding" /><span><i>02</i><b>Pre-wedding</b><small>Concept shoot</small></span></label>
+                  <label><input type="radio" name="eventType" value="Event" /><span><i>03</i><b>Event</b><small>Celebrations</small></span></label>
+                  <label><input type="radio" name="eventType" value="Portrait" /><span><i>04</i><b>Portrait</b><small>People &amp; family</small></span></label>
+                  <label><input type="radio" name="eventType" value="Commercial" /><span><i>05</i><b>Commercial</b><small>Brand content</small></span></label>
+                  <label><input type="radio" name="eventType" value="Other" /><span><i>06</i><b>Something else</b><small>Tell us below</small></span></label>
+                </div>
+                <small class="group-error" data-error-for="eventType"></small>
+              </fieldset>
+
+              <div class="field-grid two-col section-gap">
+                <label class="field">
+                  <span>Preferred date <b>*</b></span>
+                  <input name="eventDate" type="date" required />
+                  <small class="field-error"></small>
+                </label>
+                <label class="field">
+                  <span>Venue / city <b>*</b></span>
+                  <input name="venue" placeholder="Venue or city" required />
+                  <small class="field-error"></small>
+                </label>
+              </div>
+              <label class="inline-check"><input type="checkbox" name="dateFlexible" /><span class="fake-check"></span><span>My date is flexible</span></label>
+
+              <div class="field-grid two-col section-gap compact-fields">
+                <label class="field">
+                  <span>Coverage duration</span>
+                  <select name="duration">
+                    <option value="Up to 4 hours">Up to 4 hours</option>
+                    <option value="Full day" selected>Full day</option>
+                    <option value="2 days">2 days</option>
+                    <option value="3+ days">3+ days</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Expected guests</span>
+                  <select name="guestCount">
+                    <option value="Under 50">Under 50</option>
+                    <option value="50–150">50–150</option>
+                    <option value="150–300" selected>150–300</option>
+                    <option value="300+">300+</option>
+                    <option value="Not applicable">Not applicable</option>
+                  </select>
+                </label>
+              </div>
+
+              <fieldset class="choice-fieldset coverage-picker section-gap">
+                <legend>What coverage do you need? <small>Select all that apply</small></legend>
+                <div class="chip-grid">
+                  <label><input type="checkbox" name="coverage" value="Photography" /><span>Photography</span></label>
+                  <label><input type="checkbox" name="coverage" value="Cinematic film" /><span>Cinematic film</span></label>
+                  <label><input type="checkbox" name="coverage" value="Social reels" /><span>Social reels</span></label>
+                  <label><input type="checkbox" name="coverage" value="Drone" /><span>Drone</span></label>
+                  <label><input type="checkbox" name="coverage" value="Album" /><span>Album</span></label>
+                  <label><input type="checkbox" name="coverage" value="Same-day edit" /><span>Same-day edit</span></label>
+                </div>
+              </fieldset>
+
+              <div class="budget-card section-gap">
+                <div class="budget-head"><span>Planned budget</span><output id="budgetOutput">₹1.5L – ₹2L</output></div>
+                <input id="budgetRange" name="budgetLevel" type="range" min="0" max="5" value="2" step="1" aria-label="Planned budget" />
+                <div class="range-labels"><span>Under ₹50K</span><span>₹5L+</span></div>
+                <input type="hidden" name="budget" value="₹1.5L – ₹2L" />
+              </div>
+            </section>
+
+            <section class="form-step" data-step="3" aria-labelledby="stepTitle" hidden>
+              <fieldset class="choice-fieldset style-picker">
+                <legend>What should it feel like? <small>Choose up to three</small></legend>
+                <div class="chip-grid visual-chips">
+                  <label><input type="checkbox" name="style" value="Cinematic" /><span>Cinematic</span></label>
+                  <label><input type="checkbox" name="style" value="Candid" /><span>Candid</span></label>
+                  <label><input type="checkbox" name="style" value="Documentary" /><span>Documentary</span></label>
+                  <label><input type="checkbox" name="style" value="Editorial" /><span>Editorial</span></label>
+                  <label><input type="checkbox" name="style" value="Traditional" /><span>Traditional</span></label>
+                  <label><input type="checkbox" name="style" value="Fun & energetic" /><span>Fun &amp; energetic</span></label>
+                </div>
+                <small class="group-hint" id="styleHint">0 of 3 selected</small>
+              </fieldset>
+
+              <label class="field section-gap">
+                <span>Tell us about your vision</span>
+                <textarea name="story" maxlength="600" rows="5" placeholder="The people, mood, moments or references you want us to know about…"></textarea>
+                <small class="char-count"><span id="storyCount">0</span>/600</small>
+              </label>
+
+              <div class="field-grid two-col section-gap compact-fields">
+                <label class="field">
+                  <span>How did you find us?</span>
+                  <select name="source">
+                    <option value="Instagram" selected>Instagram</option>
+                    <option value="Friend or family">Friend or family</option>
+                    <option value="Google">Google</option>
+                    <option value="Previous client">Previous client</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Best time to connect</span>
+                  <select name="callbackTime">
+                    <option value="Any time" selected>Any time</option>
+                    <option value="10am–1pm">10am–1pm</option>
+                    <option value="1pm–5pm">1pm–5pm</option>
+                    <option value="5pm–8pm">5pm–8pm</option>
+                  </select>
+                </label>
+              </div>
+
+              <aside class="review-card section-gap" aria-label="Enquiry summary">
+                <div class="review-title"><span>Your brief</span><button type="button" data-go-step="2">Edit project</button></div>
+                <dl id="briefSummary">
+                  <div><dt>Project</dt><dd>Not selected</dd></div>
+                  <div><dt>Date</dt><dd>Not added</dd></div>
+                  <div><dt>Location</dt><dd>Not added</dd></div>
+                  <div><dt>Budget</dt><dd>₹1.5L – ₹2L</dd></div>
+                </dl>
+              </aside>
+
+              <label class="inline-check consent-check section-gap">
+                <input type="checkbox" name="consent" required />
+                <span class="fake-check"></span>
+                <span>I agree to be contacted about this enquiry. <b>*</b></span>
+              </label>
+              <small class="group-error" data-error-for="consent"></small>
+            </section>
+
+            <footer class="form-actions">
+              <button class="btn-secondary" type="button" id="backBtn" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>Back
+              </button>
+              <div class="step-note"><span id="requiredNote">* Required fields</span><span id="draftStatus" role="status"></span></div>
+              <button class="btn-primary" type="button" id="nextBtn">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button>
+              <button class="btn-primary submit-btn" type="submit" id="submitBtn" hidden>
+                <span>Send enquiry</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"></path></svg>
+              </button>
+            </footer>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <dialog class="success-dialog" id="successDialog">
+      <div class="success-icon"><svg viewBox="0 0 32 32"><path d="m8 16 5 5L24 10"></path></svg></div>
+      <p class="eyebrow">Enquiry received</p>
+      <h2>We’ll frame the next step.</h2>
+      <p>Thank you, <strong id="successName"></strong>. We’ll review your brief and get back to you within one working day.</p>
+      <div class="enquiry-reference">Reference <b id="enquiryReference"></b></div>
+      <button class="btn-primary" type="button" id="closeSuccess">Done</button>
+    </dialog>
+
+    <dialog class="setup-dialog" id="setupDialog">
+      <button class="dialog-close" type="button" id="closeSetup" aria-label="Close">×</button>
+      <p class="eyebrow">Preview mode</p>
+      <h2>Your enquiry is ready to test.</h2>
+      <p>The Google Sheet connection has not been added yet. Your answers are still here, and this test has not been sent.</p>
+      <div class="setup-actions">
+        <button class="btn-primary" type="button" id="copyEnquiry">Copy enquiry details</button>
+        <button class="btn-secondary" type="button" id="keepEditing">Keep editing</button>
+      </div>
+    </dialog>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
