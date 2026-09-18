@@ -32,8 +32,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .image-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,10,15,.18), rgba(9,10,15,.05) 40%, rgba(9,10,15,.88) 100%), linear-gradient(90deg, rgba(9,10,15,.23), transparent 60%); }
 .brand-lockup, .mobile-brand { display: flex; align-items: center; gap: 10px; letter-spacing: .1em; }
 .brand-lockup { position: absolute; top: 38px; left: 42px; }
-.brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.38); border-radius: 50%; color: var(--accent); }
-.brand-mark svg { width: 27px; height: 27px; }
+.brand-logo-card { width: 48px; height: 48px; display: grid; place-items: center; padding: 5px; overflow: hidden; border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.brand-logo-card img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .brand-lockup > span:last-child, .mobile-brand > span:nth-child(2) { display: grid; line-height: 1; }
 .brand-lockup strong, .mobile-brand strong { font-size: .96rem; }
 .brand-lockup small, .mobile-brand small { margin-top: 5px; font-size: .59rem; letter-spacing: .24em; opacity: .8; }
@@ -44,10 +44,16 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .visual-note { max-width: 430px; margin: 22px 0 26px; font-size: 1rem; line-height: 1.6; color: rgba(255,255,255,.78); }
 .service-line { display: flex; flex-wrap: wrap; gap: 8px; }
 .service-line span { padding: 8px 11px; border: 1px solid rgba(255,255,255,.27); border-radius: 99px; font-size: .76rem; color: rgba(255,255,255,.9); backdrop-filter: blur(8px); }
+.contact-dock { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 18px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.2); font-style: normal; }
+.contact-dock a { min-width: 0; color: rgba(255,255,255,.9); font-size: .74rem; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact-dock a:hover { color: white; text-decoration: underline; text-underline-offset: 3px; }
+.contact-dock a span { display: block; margin-bottom: 3px; color: #ffb89d; font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.contact-dock .youtube-link { grid-column: 1 / -1; }
 
 .form-panel { min-width: 0; background: radial-gradient(circle at 96% 6%, #fff0e8 0, transparent 21rem), var(--paper); }
 .form-wrap { width: min(760px, calc(100% - 64px)); margin: 0 auto; padding: 54px 0 44px; }
 .mobile-brand { display: none; }
+.mobile-contact-strip { display: none; }
 .form-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 27px; }
 .step-kicker { margin: 0 0 8px; color: var(--accent-dark); font-size: .78rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
 .form-header h2 { margin: 0; font: 600 clamp(2rem, 3vw, 2.9rem)/1.06 "Playfair Display", serif; letter-spacing: -.035em; color: var(--ink); }
@@ -171,11 +177,15 @@ dialog .btn-primary { width: 100%; margin: 0; }
   .brand-lockup { display: none; }
   .visual-copy { left: 22px; right: 22px; bottom: 22px; }
   .visual-copy .eyebrow, .visual-note, .service-line { display: none; }
+  .contact-dock { display: none; }
   .visual-copy h1 { max-width: 380px; font-size: clamp(2.1rem, 9vw, 3.15rem); }
   .form-panel { min-height: calc(100vh - 240px); }
   .mobile-brand { display: flex; padding: 16px 20px; color: white; background: var(--ink); }
-  .mobile-brand .brand-mark { width: 34px; height: 34px; }
+  .mobile-brand .brand-logo-card { width: 42px; height: 42px; padding: 4px; border-radius: 10px; }
   .reply-badge { margin-left: auto; padding: 7px 9px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: rgba(255,255,255,.72); font-size: .65rem; letter-spacing: 0; }
+  .mobile-contact-strip { display: flex; gap: 7px; overflow-x: auto; padding: 9px 16px 10px; background: #171920; font-style: normal; scrollbar-width: none; }
+  .mobile-contact-strip::-webkit-scrollbar { display: none; }
+  .mobile-contact-strip a { flex: 0 0 auto; padding: 7px 10px; color: rgba(255,255,255,.82); border: 1px solid rgba(255,255,255,.16); border-radius: 99px; font-size: .68rem; font-weight: 600; text-decoration: none; }
   .form-wrap { width: min(680px, calc(100% - 36px)); padding: 31px 0 35px; }
 }
 
