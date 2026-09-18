@@ -6,7 +6,7 @@
   const successDialog = document.querySelector("#successDialog");
   const setupDialog = document.querySelector("#setupDialog");
   const draftKey = "spf-enquiry-draft-v1";
-  const budgetLabels = ["Under ₹50K", "₹50K – ₹1L", "₹1.5L – ₹2L", "₹2L – ₹3L", "₹3L – ₹5L", "₹5L+"];
+  const budgetLabels = ["₹45K – ₹75K", "₹75K – ₹1L", "₹1L – ₹1.5L", "₹1.5L – ₹2L", "₹2L – ₹2.5L", "₹2.5L – ₹3L"];
   const stepContent = {
     1: ["Step 1 of 3", "Let’s start with you", "How can we reach you about your shoot?"],
     2: ["Step 2 of 3", "Tell us about the project", "A few details help us recommend the right coverage."],
