@@ -228,20 +228,70 @@ function testNotifications() {
 
 function getTelegramChatId() {
   const properties = PropertiesService.getScriptProperties();
-  const botToken = (properties.getProperty("TELEGRAM_BOT_TOKEN") || "").trim();
-  if (!botToken) {
-    throw new Error("Set TELEGRAM_BOT_TOKEN in Script Properties first.");
+  const token = properties.getProperty("TELEGRAM_BOT_TOKEN");
+
+  if (!token) {
+    throw new Error(
+      "TELEGRAM_BOT_TOKEN is missing from Script Properties."
+    );
   }
 
-  const response = UrlFetchApp.fetch(telegramApiUrl(botToken, "getUpdates"), {
-    method: "get",
-    muteHttpExceptions: true
-  });
-  const payload = assertTelegramSuccess(response, "getUpdates");
-  const loggedResponse = JSON.stringify(payload, null, 2);
-  console.log(loggedResponse);
-  Logger.log(loggedResponse);
-  return payload;
+  const url =
+    "https://api.telegram.org/bot" +
+    token +
+    "/getUpdates";
+
+  try {
+    const response = UrlFetchApp.fetch(url, {
+      method: "get",
+      muteHttpExceptions: true
+    });
+
+    const statusCode = response.getResponseCode();
+    const body = response.getContentText();
+
+    console.log("Telegram HTTP status: " + statusCode);
+    console.log("Telegram response: " + body);
+
+    if (statusCode !== 200) {
+      throw new Error(
+        "Telegram API returned HTTP " +
+        statusCode +
+        ". Check the Execution log."
+      );
+    }
+
+    const data = JSON.parse(body);
+
+    if (!data.result || data.result.length === 0) {
+      console.log(
+        "No Telegram messages found. Send a new message to the bot and run this function again."
+      );
+      return;
+    }
+
+    data.result.forEach(function (update) {
+      let chat = null;
+
+      if (update.message && update.message.chat) {
+        chat = update.message.chat;
+      } else if (
+        update.channel_post &&
+        update.channel_post.chat
+      ) {
+        chat = update.channel_post.chat;
+      }
+
+      if (chat) {
+        console.log("TELEGRAM_CHAT_ID = " + chat.id);
+        console.log("Chat type = " + chat.type);
+      }
+    });
+
+  } catch (error) {
+    console.error("Telegram error: " + error.message);
+    throw error;
+  }
 }
 
 function jsonResponse(payload) {
